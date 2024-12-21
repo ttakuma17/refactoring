@@ -9,6 +9,7 @@ function statement(invoice, plays) {
   for (let perf of invoice.performances) {
     const play = plays[perf.playID];
     let thisAmount = 0;
+    // このSwitch文がまず分割できそう
     switch (play.type) {
       case "tragedy":
         thisAmount = 40000;
