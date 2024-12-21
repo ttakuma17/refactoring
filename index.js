@@ -34,7 +34,7 @@ function statement(invoice, plays) {
     }
     // 注文の内訳を出力
     result += ` ${play.name}: ${format(
-        thisAmount / 100)} (${perf.audience} seats)\n`;
+      thisAmount / 100)} (${perf.audience} seats)\n`;
     totalAmount += thisAmount;
   }
 
