@@ -1,4 +1,4 @@
-function amountFor(aPerformance, play) {
+function amountFor(aPerformance) {
   let result = 0;
   // このSwitch文がまず分割できそう
   switch (playFor(aPerformance).type) {
@@ -26,7 +26,7 @@ function playFor(aPerformance) {
 }
 
 
-function statement(invoice, plays) {
+function statement(invoice) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `Statement for ${invoice.customer}\n`;
