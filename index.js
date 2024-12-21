@@ -35,7 +35,6 @@ function statement(invoice) {
   }).format;
 
   for (let perf of invoice.performances) {
-    let thisAmount = amountFor(perf, playFor(perf));
 
     // ボリューム特典のポイントを加算
     volumeCredits += Math.max(perf.audience - 30, 0);
@@ -45,8 +44,8 @@ function statement(invoice) {
     }
     // 注文の内訳を出力
     result += ` ${playFor(perf).name}: ${format(
-      thisAmount / 100)} (${perf.audience} seats)\n`;
-    totalAmount += thisAmount;
+      amountFor(perf, playFor(perf)) / 100)} (${perf.audience} seats)\n`;
+    totalAmount += amountFor(perf, playFor(perf));
   }
 
   result += `Amount owed is ${format(totalAmount / 100)}\n`
